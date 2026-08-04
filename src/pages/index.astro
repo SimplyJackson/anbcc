@@ -1,0 +1,116 @@
+---
+import { services, siteConfig, team } from "../content";
+import "../styles.css";
+
+const icon = (name: "arrow" | "heart" | "shield" | "sparkles" | "menu" | "close") => {
+  const paths = {
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    heart: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5a5.5 5.5 0 0 0 1.1-8.9Z"/>',
+    shield: '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/><path d="m9 12 2 2 4-4"/>',
+    sparkles: '<path d="m12 3-1.9 4.8a2 2 0 0 1-1.2 1.2L4 11l4.9 1.9a2 2 0 0 1 1.2 1.2L12 19l1.9-4.9a2 2 0 0 1 1.2-1.2L20 11l-4.9-1.9a2 2 0 0 1-1.2-1.2Z"/>',
+    menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+    close: '<path d="M18 6 6 18M6 6l12 12"/>',
+  };
+  return `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths[name]}</svg>`;
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Compassionate, person-centered counseling for individuals, couples, and families." />
+    <title>{siteConfig.name}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="header">
+        <a href="#top" class="brand" aria-label={`${siteConfig.name} home`}>
+          <img class="brand-logo" src="/assets/logo.png" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
+          <span class="brand-mark" hidden>{siteConfig.shortName}</span>
+          <span class="brand-copy">Counseling<br />Center</span>
+        </a>
+        <button class="menu-button" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="menu-icon" set:html={icon("menu")} />
+          <span class="close-icon" hidden set:html={icon("close")} />
+        </button>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#about">About</a><a href="#services">Services</a><a href="#team">Our team</a><a href="#contact">Contact</a>
+          <a class="portal-link" href={siteConfig.portalUrl}>Client portal <span set:html={icon("arrow")} /></a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Compassionate care, centered on you</p>
+            <h1>A steady place to <em>begin again.</em></h1>
+            <p class="hero-intro">You do not have to carry everything alone. Find thoughtful, personalized counseling in a space built for honesty, healing, and meaningful change.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#contact">Start a conversation <span set:html={icon("arrow")} /></a>
+              <a class="text-link" href="#team">Meet our counselors</a>
+            </div>
+            <div class="trust-row">
+              <span><i set:html={icon("shield")} /> Confidential care</span>
+              <span><i set:html={icon("heart")} /> Person-centered</span>
+            </div>
+          </div>
+          <div class="hero-art" aria-label="A calm abstract composition">
+            <div class="sun-shape"></div><div class="arch-shape"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
+            <div class="hero-note"><i set:html={icon("sparkles")} /><span>Care that meets you where you are.</span></div>
+          </div>
+        </section>
+
+        <section class="intro section" id="about">
+          <div><p class="eyebrow">Welcome to ANB</p><h2>Healing looks different for everyone.</h2></div>
+          <div class="intro-body">
+            <p>Maybe you are feeling overwhelmed, disconnected, or simply ready for something to change. Our counselors offer an accepting place to make sense of what you are carrying and discover a way forward that feels true to you.</p>
+            <p>We believe the strongest therapy begins with trust. That means listening closely, honoring your experience, and shaping care around your needs, values, and goals.</p>
+          </div>
+        </section>
+
+        <section class="services section" id="services">
+          <div class="section-heading"><div><p class="eyebrow">How we can help</p><h2>Support for real life.</h2></div><p>Explore a range of counseling services for different ages, relationships, and seasons of life.</p></div>
+          <div class="service-grid">
+            {services.map((service) => <article class="service-card"><span class="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.description}</p><a href="#contact">Learn more <span set:html={icon("arrow")} /></a></article>)}
+          </div>
+        </section>
+
+        <section class="approach section">
+          <div class="approach-visual"><div class="approach-ring"></div><blockquote>“You deserve support that feels human, hopeful, and truly yours.”</blockquote></div>
+          <div class="approach-copy"><p class="eyebrow">Our approach</p><h2>Professional care with a deeply personal touch.</h2><p>Our work is grounded in warmth, respect, and proven therapeutic practices. We make space for the whole person, not just a diagnosis or a difficult season.</p><ul><li><span>01</span> A relationship built on safety and trust</li><li><span>02</span> Care shaped around your unique goals</li><li><span>03</span> Practical tools for change beyond the session</li></ul></div>
+        </section>
+
+        <section class="team section" id="team">
+          <div class="section-heading"><div><p class="eyebrow">Meet the team</p><h2>People who are here to listen.</h2></div><p>Each counselor brings their own training, perspective, and way of connecting. Finding the right fit matters.</p></div>
+          <div class="team-grid">
+            {team.map((member, index) => <article class="team-card"><div class="portrait-placeholder"><img src={member.image || `/assets/staff-${index + 1}.jpg`} alt={`${member.name} headshot`} onerror="this.hidden=true" /><span>{String(index + 1).padStart(2, "0")}</span><small>Headshot</small></div><div class="team-meta"><h3>{member.name}</h3><p class="credentials">{member.credentials}</p><p>{member.focus}</p><a href="#contact">Read bio <span set:html={icon("arrow")} /></a></div></article>)}
+          </div>
+        </section>
+
+        <section class="portal-banner" id="client-portal"><div><p class="eyebrow light">Already a client?</p><h2>Your care, one click away.</h2><p>Access appointments, secure messages, forms, and account information through the client portal.</p></div><a class="button light-button" href={siteConfig.portalUrl}>Open client portal <span set:html={icon("arrow")} /></a></section>
+
+        <section class="contact section" id="contact"><div><p class="eyebrow">Take the first step</p><h2>Let’s find the right support for you.</h2><p>Reaching out can feel like the hardest part. Send us a note or give us a call and we will help you understand what comes next.</p></div><div class="contact-card"><a href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}><span>Call</span>{siteConfig.phone}</a><a href={`mailto:${siteConfig.email}`}><span>Email</span>{siteConfig.email}</a><div><span>Location</span>{siteConfig.location}</div><p class="contact-note">If you are experiencing an emergency, call 911 or visit your nearest emergency room.</p></div></section>
+      </main>
+
+      <footer><a href="#top" class="brand footer-brand"><span class="brand-mark">{siteConfig.shortName}</span><span class="brand-copy">Counseling<br />Center</span></a><p>Compassionate counseling for individuals, couples, and families.</p><div class="footer-links"><a href="#services">Services</a><a href="#team">Our team</a><a href={siteConfig.portalUrl}>Client portal</a></div><small>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</small></footer>
+    </div>
+    <script>
+      const button = document.querySelector<HTMLButtonElement>(".menu-button");
+      const nav = document.querySelector<HTMLElement>(".nav");
+      const menuIcon = document.querySelector<HTMLElement>(".menu-icon");
+      const closeIcon = document.querySelector<HTMLElement>(".close-icon");
+      button?.addEventListener("click", () => {
+        const open = nav?.classList.toggle("open") ?? false;
+        button.setAttribute("aria-expanded", String(open));
+        if (menuIcon) menuIcon.hidden = open;
+        if (closeIcon) closeIcon.hidden = !open;
+      });
+      nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+        nav.classList.remove("open"); button?.setAttribute("aria-expanded", "false");
+        if (menuIcon) menuIcon.hidden = false; if (closeIcon) closeIcon.hidden = true;
+      }));
+    </script>
+  </body>
+</html>
