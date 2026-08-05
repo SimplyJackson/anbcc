@@ -1,0 +1,69 @@
+---
+import { siteConfig, team } from "../../content";
+import "../../styles.css";
+
+export function getStaticPaths() {
+  return team.map((member) => ({
+    params: { slug: member.slug },
+    props: { member },
+  }));
+}
+
+const { member } = Astro.props;
+const paragraphs = member.bio.trim()
+  ? member.bio.trim().split(/\n\s*\n/)
+  : ["Biography coming soon."];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`Learn more about ${member.name} at ${siteConfig.name}.`} />
+    <title>{member.name} | {siteConfig.name}</title>
+  </head>
+  <body>
+    <header class="header profile-header">
+      <a href="/" class="brand" aria-label={`${siteConfig.name} home`}>
+        <img class="brand-logo" src="/assets/logo.png" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
+        <span class="brand-mark" hidden>{siteConfig.shortName}</span>
+        <span class="brand-copy">Counseling<br />Center</span>
+      </a>
+      <nav class="profile-nav" aria-label="Profile navigation">
+        <a href="/#team">← Back to our team</a>
+        <a class="portal-link" href={siteConfig.portalUrl}>Client portal</a>
+      </nav>
+    </header>
+
+    <main class="profile-page">
+      <section class="profile-hero">
+        <div class="profile-photo">
+          <img src={member.image} alt={`${member.name} headshot`} onerror="this.hidden=true" />
+        </div>
+        <div class="profile-intro">
+          <p class="eyebrow">Meet your counselor</p>
+          <h1>{member.name}</h1>
+          <p class="profile-role">{member.credentials}</p>
+          <p class="profile-focus">{member.focus}</p>
+        </div>
+      </section>
+
+      <section class="profile-body">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>A thoughtful space for your story.</h2>
+        </div>
+        <div class="bio-copy">
+          {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          <a class="button primary" href="/#contact">Start a conversation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="profile-footer">
+      <a href="/">{siteConfig.name}</a>
+      <small>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</small>
+    </footer>
+  </body>
+</html>
