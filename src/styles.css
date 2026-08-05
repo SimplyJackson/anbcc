@@ -164,3 +164,36 @@ footer small { color: #95a59d; grid-column: 1 / -1; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* Staff profile pages */
+.profile-header { border-bottom: 1px solid #dfe3df; }
+.profile-nav { display: flex; align-items: center; gap: 28px; }
+.profile-nav a { font-size: 14px; text-decoration: none; }
+.profile-page { background: var(--paper); }
+.profile-hero { min-height: 650px; display: grid; grid-template-columns: .85fr 1.15fr; align-items: stretch; }
+.profile-photo { position: relative; overflow: hidden; background: #cfddd3; min-height: 580px; }
+.profile-photo::before { content: ""; position: absolute; width: 54%; aspect-ratio: 1; border-radius: 50%; background: #9fb5a8; top: 15%; left: 23%; }
+.profile-photo::after { content: ""; position: absolute; width: 74%; height: 48%; border-radius: 50% 50% 0 0; background: #829d8d; bottom: -6%; left: 13%; }
+.profile-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
+.profile-intro { align-self: center; padding: clamp(60px, 9vw, 140px); }
+.profile-intro h1 { font-size: clamp(52px, 6.5vw, 96px); margin-bottom: 24px; }
+.profile-role { color: var(--clay); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 600; }
+.profile-focus { margin-top: 28px; max-width: 600px; font-family: "Newsreader", serif; font-size: clamp(24px, 2.4vw, 36px); line-height: 1.25; color: #53675f; }
+.profile-body { padding: clamp(80px, 10vw, 150px) clamp(24px, 10vw, 160px); display: grid; grid-template-columns: .8fr 1.2fr; gap: 10vw; background: var(--cream); }
+.profile-body h2 { font-size: clamp(40px, 4.5vw, 66px); }
+.bio-copy { max-width: 760px; }
+.bio-copy p { font-size: 18px; line-height: 1.8; color: #4e625a; }
+.bio-copy p + p { margin-top: 24px; }
+.bio-copy .button { margin-top: 28px; }
+.profile-footer { display: flex; grid-template-columns: none; justify-content: space-between; align-items: center; padding: 34px clamp(24px, 7vw, 110px); }
+.profile-footer a { text-decoration: none; font-family: "Newsreader", serif; font-size: 22px; }
+.profile-footer small { grid-column: auto; }
+
+@media (max-width: 760px) {
+  .profile-nav .portal-link { display: none; }
+  .profile-hero, .profile-body { grid-template-columns: 1fr; }
+  .profile-photo { min-height: 500px; }
+  .profile-intro { padding: 64px 24px 80px; }
+  .profile-body { gap: 48px; }
+  .profile-footer { align-items: flex-start; flex-direction: column; gap: 16px; }
+}
