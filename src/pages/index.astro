@@ -85,7 +85,7 @@ const icon = (name: "arrow" | "heart" | "shield" | "sparkles" | "menu" | "close"
         <section class="team section" id="team">
           <div class="section-heading"><div><p class="eyebrow">Meet the team</p><h2>People who are here to listen.</h2></div><p>Each counselor brings their own training, perspective, and way of connecting. Finding the right fit matters.</p></div>
           <div class="team-grid">
-            {team.map((member, index) => <article class="team-card"><div class="portrait-placeholder"><img src={member.image || `/assets/staff-${index + 1}.jpg`} alt={`${member.name} headshot`} onerror="this.hidden=true" /><span>{String(index + 1).padStart(2, "0")}</span><small>Headshot</small></div><div class="team-meta"><h3>{member.name}</h3><p class="credentials">{member.credentials}</p><p>{member.focus}</p><a href="#contact">Read bio <span set:html={icon("arrow")} /></a></div></article>)}
+            {team.map((member, index) => <article class="team-card"><div class="portrait-placeholder"><img src={member.image || `/assets/staff-${index + 1}.jpg`} alt={`${member.name} headshot`} onerror="this.hidden=true" /><span>{String(index + 1).padStart(2, "0")}</span><small>Headshot</small></div><div class="team-meta"><h3>{member.name}</h3><p class="credentials">{member.credentials}</p><p>{member.focus}</p><a href={`/team/${member.slug}`}>Read bio <span set:html={icon("arrow")} /></a></div></article>)}
           </div>
         </section>
 
