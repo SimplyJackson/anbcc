@@ -1,7 +1,7 @@
 // Update the business details, staff bios, and image paths in this file.
 export const siteConfig = {
   name: "A New Beginning Counseling Center",
-  shortName: "A New Beginning",
+  // shortName: "A New Beginning",
   phone: "(985) 200-3382",
   email: "hello@newbeginningcc.net",
   location: "Mandeville, Louisiana",
