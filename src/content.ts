@@ -3,6 +3,7 @@ export const siteConfig = {
   name: "A New Beginning Counseling Center",
   // shortName: "A New Beginning",
   phone: "(985) 200-3382",
+  fax: "(985) 214-0050",
   email: "hello@newbeginningcc.net",
   location: "Mandeville, Louisiana",
   portalUrl: "https://www.therapyportal.com/p/newbeginning70471/",
