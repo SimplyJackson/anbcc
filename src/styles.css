@@ -63,6 +63,14 @@ svg { transition: transform .2s ease; }
 .leaf-two { bottom: 5%; right: 5%; transform: scaleX(-1) rotate(-18deg); background: #ffd878; }
 .hero-note { position: absolute; bottom: 36px; left: 36px; right: 36px; padding: 20px 22px; background: rgba(255,253,248,.92); display: flex; gap: 12px; align-items: center; font-family: "Newsreader", serif; font-size: 20px; }
 
+.practice-features { display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 clamp(24px, 7vw, 110px); background: var(--paper); border-top: 1px solid #dce8ed; border-bottom: 1px solid #dce8ed; }
+.practice-feature { min-height: 235px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding: 38px 22px; text-align: center; border-right: 1px solid #dce8ed; }
+.practice-feature:last-child { border-right: 0; }
+.feature-icon { width: 58px; height: 58px; display: grid; place-items: center; color: var(--logo-blue); }
+.practice-feature:nth-child(even) .feature-icon { color: var(--logo-gold); }
+.feature-icon svg { width: 52px; height: 52px; stroke-width: 1.5; }
+.practice-feature h2 { margin: 0; font-family: "DM Sans", sans-serif; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.4; font-weight: 600; letter-spacing: -.01em; }
+
 .section { padding: clamp(80px, 10vw, 150px) clamp(24px, 7vw, 110px); }
 .intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: 9vw; background: var(--cream); }
 h2 { font-size: clamp(44px, 5.2vw, 76px); line-height: 1.02; margin-bottom: 0; }
@@ -137,6 +145,9 @@ footer small { color: #95a59d; grid-column: 1 / -1; }
   .service-grid { grid-template-columns: 1fr 1fr; }
   .service-card:nth-child(2) { border-right: 0; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .practice-features { grid-template-columns: repeat(2, 1fr); }
+  .practice-feature:nth-child(2) { border-right: 0; }
+  .practice-feature:nth-child(-n+2) { border-bottom: 1px solid #dce8ed; }
   .portal-banner { align-items: start; flex-direction: column; }
 }
 
@@ -151,6 +162,13 @@ footer small { color: #95a59d; grid-column: 1 / -1; }
   .intro, .section-heading { display: block; }
   .section-heading > p { margin-top: 24px; }
   .service-grid, .team-grid { grid-template-columns: 1fr; }
+  .practice-features { grid-template-columns: 1fr; padding: 0 24px; }
+  .practice-feature { min-height: auto; flex-direction: row; justify-content: flex-start; gap: 22px; padding: 28px 0; text-align: left; border-right: 0; border-bottom: 1px solid #dce8ed; }
+  .practice-feature:nth-child(2) { border-right: 0; }
+  .practice-feature:nth-child(-n+2) { border-bottom: 1px solid #dce8ed; }
+  .practice-feature:last-child { border-bottom: 0; }
+  .feature-icon { width: 48px; height: 48px; flex: 0 0 48px; }
+  .feature-icon svg { width: 42px; height: 42px; }
   .service-card { border-right: 0; margin-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); min-height: 280px; }
   .service-card h3 { margin-top: 45px; }
   .approach-visual { min-height: 470px; padding: 28px; }
