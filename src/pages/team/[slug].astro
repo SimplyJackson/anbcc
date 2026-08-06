@@ -26,9 +26,8 @@ const paragraphs = member.bio.trim()
   <body>
     <header class="header profile-header">
       <a href="/" class="brand" aria-label={`${siteConfig.name} home`}>
-        <img class="brand-logo" src="/assets/logo.png" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
-        <span class="brand-mark" hidden>{siteConfig.shortName}</span>
-        <span class="brand-copy">Counseling<br />Center</span>
+        <img class="brand-logo" src="/assets/logo.png" alt={`${siteConfig.name} logo`} />
+        <span class="brand-copy">A New Beginning Counseling Center</span>
       </a>
       <nav class="profile-nav" aria-label="Profile navigation">
         <a href="/#team">← Back to our team</a>
