@@ -27,9 +27,8 @@ const icon = (name: "arrow" | "heart" | "shield" | "sparkles" | "menu" | "close"
     <div class="site-shell">
       <header class="header">
         <a href="#top" class="brand" aria-label={`${siteConfig.name} home`}>
-          <img class="brand-logo" src="/assets/logo.png" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
-          <span class="brand-mark" hidden>{siteConfig.shortName}</span>
-          <span class="brand-copy">Counseling<br />Center</span>
+          <img class="brand-logo" src="/assets/logo.png" alt={`${siteConfig.name} logo`} />
+          <span class="brand-copy">A New Beginning Counseling Center</span>
         </a>
         <button class="menu-button" aria-label="Toggle navigation" aria-expanded="false">
           <span class="menu-icon" set:html={icon("menu")} />
@@ -94,7 +93,7 @@ const icon = (name: "arrow" | "heart" | "shield" | "sparkles" | "menu" | "close"
         <section class="contact section" id="contact"><div><p class="eyebrow">Take the first step</p><h2>Let’s find the right support for you.</h2><p>Reaching out can feel like the hardest part. Send us a note or give us a call and we will help you understand what comes next.</p></div><div class="contact-card"><a href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}><span>Call</span>{siteConfig.phone}</a><a href={`mailto:${siteConfig.email}`}><span>Email</span>{siteConfig.email}</a><div><span>Location</span>{siteConfig.location}</div><p class="contact-note">If you are experiencing an emergency, call 911 or visit your nearest emergency room.</p></div></section>
       </main>
 
-      <footer><a href="#top" class="brand footer-brand"><span class="brand-mark">{siteConfig.shortName}</span><span class="brand-copy">Counseling<br />Center</span></a><p>Compassionate counseling for individuals, couples, and families.</p><div class="footer-links"><a href="#services">Services</a><a href="#team">Our team</a><a href={siteConfig.portalUrl}>Client portal</a></div><small>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</small></footer>
+      <footer><a href="#top" class="brand footer-brand"><img class="brand-logo" src="/assets/logo.png" alt={`${siteConfig.name} logo`} /><span class="brand-copy">A New Beginning Counseling Center</span></a><p>Compassionate counseling for individuals, couples, and families.</p><div class="footer-links"><a href="#services">Services</a><a href="#team">Our team</a><a href={siteConfig.portalUrl}>Client portal</a></div><small>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</small></footer>
     </div>
     <script>
       const button = document.querySelector<HTMLButtonElement>(".menu-button");
