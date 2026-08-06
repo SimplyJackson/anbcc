@@ -25,13 +25,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   height: 96px; display: flex; align-items: center; justify-content: space-between;
   padding: 0 clamp(24px, 5vw, 78px); background: var(--cream); position: relative; z-index: 20;
 }
-.brand { display: inline-flex; gap: 12px; align-items: center; text-decoration: none; }
-.brand-logo { width: 54px; height: 54px; object-fit: contain; }
-.brand-mark {
-  width: 52px; height: 52px; border: 1px solid var(--forest); border-radius: 50%;
-  display: grid; place-items: center; font-family: "Newsreader", serif; font-size: 18px; letter-spacing: .08em;
-}
-.brand-copy { font-size: 12px; line-height: 1.15; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+.brand { display: inline-flex; gap: 14px; align-items: center; text-decoration: none; }
+.brand-logo { width: 62px; height: 62px; flex: 0 0 auto; object-fit: contain; }
+.brand-copy { max-width: 220px; font-family: "Newsreader", serif; font-size: 18px; line-height: 1.08; letter-spacing: -.01em; font-weight: 400; }
 .nav { display: flex; gap: clamp(20px, 3vw, 44px); align-items: center; }
 .nav a { text-decoration: none; font-size: 14px; }
 .nav a:not(.portal-link):hover { color: var(--clay); }
@@ -121,7 +117,7 @@ blockquote { position: relative; margin: 0; max-width: 420px; color: white; font
 .contact-note { margin: 28px 0 0; color: #7c5c50; font-size: 12px; line-height: 1.6; }
 
 footer { padding: 70px clamp(24px, 7vw, 110px) 30px; background: var(--ink); color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-.footer-brand .brand-mark { border-color: white; }
+.footer-brand .brand-logo { filter: brightness(0) invert(1); }
 footer > p { color: #bbc8c2; max-width: 410px; justify-self: end; text-align: right; }
 .footer-links { grid-column: 1 / -1; display: flex; gap: 28px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,.16); border-bottom: 1px solid rgba(255,255,255,.16); }
 .footer-links a { font-size: 13px; }
@@ -143,7 +139,8 @@ footer small { color: #95a59d; grid-column: 1 / -1; }
 
 @media (max-width: 640px) {
   .header { height: 82px; }
-  .brand-mark { width: 44px; height: 44px; }
+  .brand-logo { width: 48px; height: 48px; }
+  .brand-copy { max-width: 155px; font-size: 15px; }
   h1 { font-size: 58px; }
   .hero-copy { padding-top: 70px; }
   .hero-art { min-height: 440px; }
