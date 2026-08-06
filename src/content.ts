@@ -4,7 +4,7 @@ export const siteConfig = {
   // shortName: "A New Beginning",
   phone: "(985) 200-3382",
   fax: "(985) 214-0050",
-  email: "hello@newbeginningcc.net",
+  email: "alice@newbeginningcc.net",
   location: "Mandeville, Louisiana",
   portalUrl: "https://www.therapyportal.com/p/newbeginning70471/",
 };
@@ -89,8 +89,8 @@ At the core of Jamey’s work is the belief that our thoughts, emotions, behavio
   //   bio: ``,
   // },
   {
-    slug: "sandy-vajtaskovic",
-    name: "Sandy Vajtaskovic",
+    slug: "sandy-vojtaskovic",
+    name: "Sandy Vojtaskovic",
     credentials: "Supervised Intern",
     focus: "Individual, Adolescents, & Couples",
     image: "/assets/staff-6.jpg",
