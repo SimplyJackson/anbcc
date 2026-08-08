@@ -10,10 +10,10 @@ export const siteConfig = {
 };
 
 export const services = [
-  { number: "01", title: "Individual Counseling", description: "A private, supportive space to work through anxiety, depression, grief, trauma, and life transitions." },
-  { number: "02", title: "Couples & Families", description: "Practical support for communication, connection, conflict, parenting, and changing family dynamics." },
+  { number: "01", title: "Individual Counseling", description: "Individuals ages 10 and up can find a confidential space to work through past hurts and traumas or current stressors. In individual sessions. You will explore your patterns of thought, behavior, and mood in order to take steps toward change at your own pace." },
+  { number: "02", title: "Couples & Families", description: "As a couple or family, you will explore communication patterns, cycles within the relationship, and ways to compromise and understand one another. Whether you would like to improve what is already going well, or identify what is not, the relationship is the priority in these sessions." },
   { number: "03", title: "Adolescents", description: "Age-appropriate care that helps young people feel understood, build skills, and express what is hard to say." },
-  { number: "04", title: "Medication Management", description: "Comprehensive evaluations and ongoing management for psychiatric medications." },
+  { number: "04", title: "Medication Management", description: "A thorough evaluation will be the first step in order to determine the best medication plan for your or your child." },
 ];
 
 export const team = [
@@ -94,10 +94,14 @@ At the core of Jamey’s work is the belief that our thoughts, emotions, behavio
     credentials: "Supervised Intern",
     focus: "Individual, Adolescents, & Couples",
     image: "/assets/staff-6.jpg",
-    bio: `I am Sandy Vojtaskovic and as a clinical mental health intern, I serve clients under the supervision of Alice Baldassaro. As a former teacher, I saw the needs of adolescents and their families and wanted to help families address personal struggles more effectively. I can help with school-related issues and social anxiety through a collaborative approach that encourages clients to work toward achieving positive goals.
+    bio: `Sandy Vojtaskovic is a Clinical Mental Health Intern who provides counseling services under the supervision of Alice Baldassaro. As a former teacher, Sandy recognized the needs of adolescents and their families and developed a passion for helping individuals and families navigate personal struggles more effectively.
 
-I enjoy working with teens, adults, and couples to help them navigate normal life challenges. My therapeutic approaches include cognitive-behavioral therapy (CBT), person-centered therapy, and solution-focused therapy. As a SYMBIS certified pre-marriage assessment facilitator, I am excited to help engaged couples learn about their strengths and weaknesses.
+Sandy works with teens, adults, and couples who are experiencing a variety of life challenges. She has a special interest in helping clients with school-related concerns and social anxiety. Through a collaborative and supportive approach, Sandy encourages clients to recognize their strengths, establish positive goals, and work toward meaningful change.
 
-A wide range of availability options, a sliding scale, in-person and telehealth options offer accessibility as a priority for my clients.`,
+Her therapeutic approaches include Cognitive Behavioral Therapy (CBT), Person-Centered Therapy, and Solution-Focused Therapy. Sandy believes in creating a safe, supportive environment where clients feel heard, respected, and empowered throughout the counseling process.
+
+As a SYMBIS-certified pre-marital assessment facilitator, Sandy enjoys helping engaged couples better understand their relationship strengths and areas for growth as they prepare for marriage.
+
+Sandy is committed to making counseling accessible by offering flexible scheduling, sliding-scale options, and both in-person and telehealth services. She strives to provide a welcoming environment where clients can feel comfortable being themselves while working toward positive change.`,
   },
 ];
