@@ -12,7 +12,7 @@ export const siteConfig = {
 export const services = [
   { number: "01", title: "Individual Counseling", description: "Individuals ages 10 and up can find a confidential space to work through past hurts and traumas or current stressors. In individual sessions. You will explore your patterns of thought, behavior, and mood in order to take steps toward change at your own pace." },
   { number: "02", title: "Couples & Families", description: "As a couple or family, you will explore communication patterns, cycles within the relationship, and ways to compromise and understand one another. Whether you would like to improve what is already going well, or identify what is not, the relationship is the priority in these sessions." },
-  { number: "03", title: "Adolescents", description: "Age-appropriate care that helps young people feel understood, build skills, and express what is hard to say." },
+  { number: "03", title: "Trauma", description: "Trauma-informed counseling offers a steady, supportive space to process painful experiences at your own pace, ease the impact of distressing memories, and build greater safety, resilience, and connection." },
   { number: "04", title: "Medication Management", description: "A thorough evaluation will be the first step in order to determine the best medication plan for your or your child." },
 ];
 
