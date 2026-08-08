@@ -49,7 +49,7 @@ const icon = (name: "arrow" | "heart" | "shield" | "sparkles" | "menu" | "close"
           <div class="hero-copy">
             <p class="eyebrow">Compassionate care, centered on you</p>
             <h1>A steady place to <em>begin again.</em></h1>
-            <p class="hero-intro">You do not have to carry everything alone. Find thoughtful, personalized counseling in a space built for honesty, healing, and meaningful change.</p>
+            <p class="hero-intro">It is always possible to start over. No matter what you are carrying, our team is here to help you find lasting and meaningful change.</p>
             <div class="hero-actions">
               <a class="button primary" href="#contact">Start a conversation <span set:html={icon("arrow")} /></a>
               <a class="text-link" href="#team">Meet our counselors</a>
@@ -93,7 +93,7 @@ const icon = (name: "arrow" | "heart" | "shield" | "sparkles" | "menu" | "close"
         </section>
 
         <section class="services section" id="services">
-          <div class="section-heading"><div><p class="eyebrow">How we can help</p><h2>Support for real life.</h2></div><p>Explore a range of counseling services for different ages, relationships, and seasons of life.</p></div>
+          <div class="section-heading"><div><p class="eyebrow">How we can help</p><h2>Support for real life</h2></div><p>Explore a range of counseling services for different ages, relationships, and seasons of life.</p></div>
           <div class="service-grid">
             {services.map((service) => <article class="service-card"><span class="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.description}</p><a href="#contact">Learn more <span set:html={icon("arrow")} /></a></article>)}
           </div>
