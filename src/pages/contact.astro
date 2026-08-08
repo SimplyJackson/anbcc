@@ -1,0 +1,167 @@
+---
+import { siteConfig, team } from "../content";
+import "../styles.css";
+
+const today = new Date().toISOString().split("T")[0];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`Contact ${siteConfig.name} to ask about counseling services or request an appointment.`} />
+    <title>Contact | {siteConfig.name}</title>
+  </head>
+  <body>
+    <header class="header contact-header">
+      <a href="/" class="brand" aria-label={`${siteConfig.name} home`}>
+        <img class="brand-logo" src="/assets/logo.png" alt={`${siteConfig.name} logo`} />
+        <span class="brand-copy">A New Beginning Counseling Center</span>
+      </a>
+      <nav class="profile-nav" aria-label="Contact page navigation">
+        <a href="/">← Back home</a>
+        <a class="portal-link" href={siteConfig.portalUrl}>Client portal</a>
+      </nav>
+    </header>
+
+    <main class="contact-page">
+      <section class="contact-intro">
+        <p class="eyebrow">Contact us</p>
+        <h1>Start a <em>conversation.</em></h1>
+        <p>Tell us a little about what you are looking for. Our team will review your message and follow up using your preferred communication method.</p>
+      </section>
+
+      <section class="intake-layout" aria-labelledby="contact-form-heading">
+        <form class="intake-form" id="contact-form">
+          <div class="form-heading">
+            <p class="eyebrow">Get in touch</p>
+            <h2 id="contact-form-heading">How can we help?</h2>
+            <p>Fields marked with an asterisk (*) are required.</p>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              <span>First name *</span>
+              <input name="firstName" type="text" autocomplete="given-name" maxlength="100" required />
+            </label>
+            <label>
+              <span>Last name *</span>
+              <input name="lastName" type="text" autocomplete="family-name" maxlength="100" required />
+            </label>
+            <label>
+              <span>Phone number *</span>
+              <input name="phone" type="tel" autocomplete="tel" maxlength="30" required />
+            </label>
+            <label>
+              <span>Email *</span>
+              <input name="email" type="email" autocomplete="email" maxlength="254" required />
+            </label>
+            <label>
+              <span>Date of birth *</span>
+              <input name="dateOfBirth" type="date" autocomplete="bday" max={today} required />
+            </label>
+            <label>
+              <span>Insurance *</span>
+              <input name="insurance" type="text" maxlength="150" placeholder="Insurance provider or self-pay" required />
+            </label>
+            <label>
+              <span>Preferred meeting method *</span>
+              <select name="preferredMeetingMethod" required>
+                <option value="">Select one</option>
+                <option>In person</option>
+                <option>Telehealth</option>
+                <option>No preference</option>
+              </select>
+            </label>
+            <label>
+              <span>Preferred communication method *</span>
+              <select name="preferredCommunicationMethod" required>
+                <option value="">Select one</option>
+                <option>Phone call</option>
+                <option>Email</option>
+                <option>Text message</option>
+              </select>
+            </label>
+            <label class="full-width">
+              <span>Preferred counselor <small>(optional)</small></span>
+              <select name="preferredCounselor">
+                <option value="">No preference</option>
+                {team.map((member) => <option value={member.name}>{member.name}</option>)}
+              </select>
+            </label>
+            <label class="full-width">
+              <span>Message *</span>
+              <textarea name="message" rows="7" maxlength="4000" required></textarea>
+            </label>
+          </div>
+
+          <label class="form-honeypot" aria-hidden="true">
+            <span>Company</span>
+            <input name="company" type="text" tabindex="-1" autocomplete="off" />
+          </label>
+
+          <div class="form-submit-row">
+            <button class="button primary form-submit" type="submit">Send message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+          <p class="form-privacy">Please do not use this form for emergencies. Sending this form does not establish a therapist-client relationship.</p>
+        </form>
+
+        <aside class="contact-aside">
+          <p class="eyebrow">Practice information</p>
+          <h2>We’re here when you’re ready.</h2>
+          <dl>
+            <div><dt>Phone</dt><dd><a href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}>{siteConfig.phone}</a></dd></div>
+            <div><dt>Fax</dt><dd>{siteConfig.fax}</dd></div>
+            <div><dt>Email</dt><dd><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></dd></div>
+            <div><dt>Location</dt><dd>{siteConfig.location}</dd></div>
+          </dl>
+          <div class="emergency-note"><strong>Need immediate help?</strong><p>If you are experiencing an emergency, call 911 or visit your nearest emergency room.</p></div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="profile-footer">
+      <a href="/">{siteConfig.name}</a>
+      <small>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</small>
+    </footer>
+
+    <script>
+      const form = document.querySelector<HTMLFormElement>("#contact-form");
+      const status = document.querySelector<HTMLElement>("#form-status");
+      const submit = form?.querySelector<HTMLButtonElement>("button[type='submit']");
+
+      form?.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.reportValidity() || !status || !submit) return;
+
+        submit.disabled = true;
+        submit.textContent = "Sending…";
+        status.className = "form-status";
+        status.textContent = "";
+
+        try {
+          const payload = Object.fromEntries(new FormData(form).entries());
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(result.message || "We could not send your message.");
+
+          form.reset();
+          status.className = "form-status success";
+          status.textContent = "Thank you. Your message has been sent.";
+        } catch (error) {
+          status.className = "form-status error";
+          status.textContent = error instanceof Error ? error.message : "We could not send your message. Please call the office instead.";
+        } finally {
+          submit.disabled = false;
+          submit.textContent = "Send message";
+        }
+      });
+    </script>
+  </body>
+</html>
