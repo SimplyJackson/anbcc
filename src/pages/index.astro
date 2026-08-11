@@ -1,5 +1,5 @@
 ---
-import { services, siteConfig, team } from "../content";
+import { services, siteConfig } from "../content";
 import "../styles.css";
 
 const icon = (name: "arrow" | "sparkles" | "menu" | "close" | "video" | "card" | "check" | "person") => {
@@ -37,7 +37,7 @@ const icon = (name: "arrow" | "sparkles" | "menu" | "close" | "video" | "card" |
           <span class="close-icon" hidden set:html={icon("close")} />
         </button>
         <nav class="nav" aria-label="Main navigation">
-          <a href="#about">About</a><a href="#services">Services</a><a href="#team">Our team</a><a href="/contact">Contact</a>
+          <a href="#about">About</a><a href="#services">Services</a><a href="/team" target="_blank" rel="noopener" aria-label="Our team (opens in a new tab)">Our team</a><a href="/contact">Contact</a>
           <a class="portal-link" href={siteConfig.portalUrl}>Client portal <span set:html={icon("arrow")} /></a>
         </nav>
       </header>
@@ -50,7 +50,7 @@ const icon = (name: "arrow" | "sparkles" | "menu" | "close" | "video" | "card" |
             <p class="hero-intro">It is always possible to start over. No matter what you are carrying, our team is here to help you find lasting and meaningful change.</p>
             <div class="hero-actions">
               <a class="button primary" href="/contact">Start a conversation <span set:html={icon("arrow")} /></a>
-              <a class="text-link" href="#team">Meet our counselors</a>
+              <a class="text-link" href="/team" target="_blank" rel="noopener">Meet our counselors</a>
             </div>
           </div>
           <div class="hero-art" aria-label="A calm abstract composition">
@@ -89,7 +89,7 @@ const icon = (name: "arrow" | "sparkles" | "menu" | "close" | "video" | "card" |
         <section class="services section" id="services">
           <div class="section-heading"><h2>Support for real life</h2><p>Explore a range of counseling services for different ages, relationships, and seasons of life.</p></div>
           <div class="service-grid">
-            {services.map((service) => <article class="service-card"><span class="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.description}</p><a href="/contact">Learn more <span set:html={icon("arrow")} /></a></article>)}
+            {services.map((service) => <article class="service-card"><span class="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.description}</p></article>)}
           </div>
         </section>
 
@@ -98,11 +98,9 @@ const icon = (name: "arrow" | "sparkles" | "menu" | "close" | "video" | "card" |
           <div class="approach-copy"><p class="eyebrow">Our approach</p><h2>Professional care with a deeply personal touch.</h2><p>Our work is grounded in warmth, respect, and proven therapeutic practices. We make space for the whole person, not just a diagnosis or a difficult season.</p><ul><li><span>01</span> A relationship built on safety and trust</li><li><span>02</span> Care shaped around your unique goals</li><li><span>03</span> Practical tools for change beyond the session</li></ul></div>
         </section>
 
-        <section class="team section" id="team">
-          <div class="section-heading"><h2>Meet the team</h2><p>Each counselor brings their own training, perspective, and way of connecting. Finding the right fit matters.</p></div>
-          <div class="team-grid">
-            {team.map((member, index) => <article class="team-card"><div class="portrait-placeholder"><img src={member.image || `/assets/staff-${index + 1}.jpg`} alt={`${member.name} headshot`} onerror="this.hidden=true" /><span>{String(index + 1).padStart(2, "0")}</span><small>Headshot</small></div><div class="team-meta"><h3>{member.name}</h3><p class="credentials">{member.credentials}</p><p>{member.focus}</p><a href={`/team/${member.slug}`}>Read bio <span set:html={icon("arrow")} /></a></div></article>)}
-          </div>
+        <section class="team-invitation section" id="team">
+          <div><p class="eyebrow">Our counselors</p><h2>Meet the team</h2></div>
+          <div><p>Each counselor brings their own training, perspective, and way of connecting. Finding the right fit matters.</p><a class="button primary" href="/team" target="_blank" rel="noopener">View our team <span set:html={icon("arrow")} /></a></div>
         </section>
 
         <section class="portal-banner" id="client-portal"><div><p class="eyebrow light">Already a client?</p><h2>Your care, one click away.</h2><p>Access appointments, secure messages, forms, and account information through the client portal.</p></div><a class="button light-button" href={siteConfig.portalUrl}>Open client portal <span set:html={icon("arrow")} /></a></section>
@@ -110,7 +108,7 @@ const icon = (name: "arrow" | "sparkles" | "menu" | "close" | "video" | "card" |
         <section class="contact section" id="contact"><div><p class="eyebrow">Take the first step</p><h2>Let’s find the right support for you.</h2><p>Reaching out can feel like the hardest part. Send us a note or give us a call and we will help you understand what comes next.</p></div><div class="contact-card"><a href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}><span>Call</span>{siteConfig.phone}</a><div><span>Fax</span>{siteConfig.fax}</div><a href={`mailto:${siteConfig.email}`}><span>Email</span>{siteConfig.email}</a><div><span>Location</span>{siteConfig.location}</div><p class="contact-note">If you are experiencing an emergency, call 911 or visit your nearest emergency room.</p></div></section>
       </main>
 
-      <footer><a href="#top" class="brand footer-brand"><img class="brand-logo" src="/assets/logo.png" alt={`${siteConfig.name} logo`} /><span class="brand-copy">A New Beginning Counseling Center</span></a><p>Compassionate counseling for individuals, couples, and families.</p><div class="footer-links"><a href="#services">Services</a><a href="#team">Our team</a><a href="/contact">Contact</a><a href={siteConfig.portalUrl}>Client portal</a></div><small>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</small></footer>
+      <footer><a href="#top" class="brand footer-brand"><img class="brand-logo" src="/assets/logo.png" alt={`${siteConfig.name} logo`} /><span class="brand-copy">A New Beginning Counseling Center</span></a><p>Compassionate counseling for individuals, couples, and families.</p><div class="footer-links"><a href="#services">Services</a><a href="/team" target="_blank" rel="noopener">Our team</a><a href="/contact">Contact</a><a href={siteConfig.portalUrl}>Client portal</a></div><small>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</small></footer>
     </div>
     <script>
       const button = document.querySelector<HTMLButtonElement>(".menu-button");
