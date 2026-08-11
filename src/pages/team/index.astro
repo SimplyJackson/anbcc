@@ -1,0 +1,59 @@
+---
+import { siteConfig, team } from "../../content";
+import "../../styles.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`Meet the counselors and care team at ${siteConfig.name}.`} />
+    <title>Our Team | {siteConfig.name}</title>
+  </head>
+  <body>
+    <header class="header profile-header">
+      <a href="/" class="brand" aria-label={`${siteConfig.name} home`}>
+        <img class="brand-logo" src="/assets/logo.png" alt={`${siteConfig.name} logo`} />
+        <span class="brand-copy">A New Beginning Counseling Center</span>
+      </a>
+      <nav class="profile-nav" aria-label="Team page navigation">
+        <a href="/">← Back home</a>
+        <a class="portal-link" href="/contact">Start a conversation</a>
+      </nav>
+    </header>
+
+    <main class="team-directory">
+      <section class="team-directory-hero">
+        <p class="eyebrow">Our counselors</p>
+        <h1>Meet the <em>team.</em></h1>
+        <p>Each member of our team brings thoughtful training, genuine care, and their own way of helping clients feel understood.</p>
+      </section>
+
+      <section class="team-directory-list" aria-label="Counselor biographies">
+        {team.map((member) => {
+          const paragraphs = member.bio.trim() ? member.bio.trim().split(/\n\s*\n/) : ["Biography coming soon."];
+          return (
+            <article class="team-directory-member" id={member.slug}>
+              <div class="team-directory-photo">
+                <img src={member.image} alt={`${member.name} headshot`} onerror="this.hidden=true" />
+              </div>
+              <div class="team-directory-bio">
+                <p class="eyebrow">{member.credentials}</p>
+                <h2>{member.name}</h2>
+                <p class="team-directory-focus">{member.focus}</p>
+                <div class="bio-copy">{paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+                <a class="button primary" href="/contact">Start a conversation</a>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+    </main>
+
+    <footer class="profile-footer">
+      <a href="/">{siteConfig.name}</a>
+      <small>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</small>
+    </footer>
+  </body>
+</html>
