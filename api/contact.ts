@@ -1,6 +1,6 @@
 const RECIPIENT = "alice@newbeginningcc.net";
 const MEETING_METHODS = new Set(["In person", "Telehealth", "No preference"]);
-const COMMUNICATION_METHODS = new Set(["Phone call", "Email", "Text message"]);
+const COMMUNICATION_METHODS = new Set(["Phone call", "Email"]);
 
 interface RequestLike {
   method?: string;
