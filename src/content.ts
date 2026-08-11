@@ -5,7 +5,7 @@ export const siteConfig = {
   phone: "(985) 200-3382",
   fax: "(985) 214-0050",
   email: "alice@newbeginningcc.net",
-  location: "1437 West Causeway Approach, Mandeville, LA 70471",
+  location: "1437 W Causeway Approach, Mandeville, LA 70471",
   portalUrl: "https://www.therapyportal.com/p/newbeginning70471/",
 };
 
