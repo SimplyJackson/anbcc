@@ -197,6 +197,7 @@ footer small { color: #c4e8f8; grid-column: 1 / -1; }
 .profile-intro { align-self: center; padding: clamp(60px, 9vw, 140px); }
 .profile-intro h1 { font-size: clamp(52px, 6.5vw, 96px); margin-bottom: 24px; }
 .profile-role { color: var(--clay); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 600; }
+.profile-email { display: inline-block; margin-top: 8px; color: var(--logo-blue); font-size: 15px; text-underline-offset: 4px; }
 .profile-focus { margin-top: 28px; max-width: 600px; font-family: "Newsreader", serif; font-size: clamp(24px, 2.4vw, 36px); line-height: 1.25; color: #53675f; }
 .profile-body { padding: clamp(80px, 10vw, 150px) clamp(24px, 10vw, 160px); display: grid; grid-template-columns: .8fr 1.2fr; gap: 10vw; background: var(--cream); }
 .profile-body h2 { font-size: clamp(40px, 4.5vw, 66px); }
@@ -279,7 +280,8 @@ footer small { color: #c4e8f8; grid-column: 1 / -1; }
 .team-directory-photo { position: sticky; top: 30px; aspect-ratio: .84; overflow: hidden; background: #cfddd3; }
 .team-directory-photo img { width: 100%; height: 100%; object-fit: cover; }
 .team-directory-bio h2 { font-size: clamp(42px, 5vw, 70px); margin-bottom: 18px; }
-.team-directory-focus { margin-bottom: 36px; color: var(--logo-blue); font-size: 15px; font-weight: 600; }
+.team-directory-focus { margin-bottom: 10px; color: var(--logo-blue); font-size: 15px; font-weight: 600; }
+.team-directory-email { display: inline-block; margin-bottom: 36px; color: var(--ink); font-size: 15px; text-underline-offset: 4px; }
 .team-directory-bio .bio-copy p { font-size: 17px; }
 
 @media (max-width: 780px) {
