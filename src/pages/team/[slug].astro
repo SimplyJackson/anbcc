@@ -44,6 +44,7 @@ const paragraphs = member.bio.trim()
           <p class="eyebrow">Meet your counselor</p>
           <h1>{member.name}</h1>
           <p class="profile-role">{member.credentials}</p>
+          <a class="profile-email" href={`mailto:${member.email}`}>{member.email}</a>
           <p class="profile-focus">{member.focus}</p>
         </div>
       </section>
