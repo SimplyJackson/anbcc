@@ -42,6 +42,7 @@ import "../../styles.css";
                 <p class="eyebrow">{member.credentials}</p>
                 <h2>{member.name}</h2>
                 <p class="team-directory-focus">{member.focus}</p>
+                <a class="team-directory-email" href={`mailto:${member.email}`}>{member.email}</a>
                 <div class="bio-copy">{paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
                 <a class="button primary" href="/contact">Start a conversation</a>
               </div>
