@@ -37,9 +37,17 @@ Alice considers it a privilege to walk alongside individuals, couples, and famil
     credentials: "Social Worker",
     focus: "Individual, Adolescents (15+)",
     image: "/assets/staff-2.jpg",
-    bio: `Taylor enjoys working with adolescents and young adults starting at age 15. She is compassionate, warm, and direct, combining a straightforward approach with playfulness and wit.
-Taylor specializes in trauma, using EMDR and Trauma Focused CBT. Additional areas of focus include neurodivergence, depression, anxiety, family challenges, and school related concerns.
-Taylor offers sessions in person for all her clients, and virtual sessions for adults in Louisiana and Mississippi. Faith based counseling available upon request.`,
+    bio: `Taylor is a Licensed Clinical Social Worker in Louisiana and Licensed Certified Social Worker in Mississippi. 
+Since receiving her Master’s of Social Work from the University of Southern Mississippi in 2017, she has worked in schools, a hospital, and the therapy office setting- practicing as a therapist since 2021. 
+Taylor enjoys working with individuals ages 15+, with a particular focus on college students and young professionals. 
+Her specialties include taboo themed OCD, trauma, and anxiety. 
+Taylor has been trained in Trauma Focused CBT (TF-CBT), Eye Movement Desensitization and Reprocessing (EMDR), and Exposure and Response Prevention (ERP).  TF-CBT is an evidence based modality for individuals under age 17 who have experienced a single event trauma, such as a car accident or assault. EMDR is an evidence based approach for individuals who have either a single event or years of complex trauma. ERP is the gold standard treatment for OCD and phobias. 
+Whether you have obsessive thoughts and rituals affecting your current life, or a past traumatic experience that is still weighing on you, Taylor can help. 
+
+Sessions with Taylor are casual, relational, and direct,  great for people who consider themselves “over thinkers.”  She is warm and supportive, using a bit of lighthearted sarcasm along the way. She’ll meet you in your overthinking and help you truly experience your emotions in new ways. 
+She provides in person and hybrid (virtual combined with in office) sessions. Clients desiring fully virtual options can be discussed on an individual basis.
+
+As a Christian counselor, Taylor is happy to incorporate Christian elements with clients who wish to do so. `,
   },
   {
     slug: "jennifer-day",
