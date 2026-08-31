@@ -20,6 +20,7 @@ export const team = [
   {
     slug: "alice-baldassaro",
     name: "Alice Baldassaro, LPC-S",
+    email: "alice@newbeginningcc.net",
     credentials: "Owner - Counselor",
     focus: "Individual, Family, Couples",
     image: "/assets/staff-1.jpg",
@@ -34,6 +35,7 @@ Alice considers it a privilege to walk alongside individuals, couples, and famil
   {
     slug: "taylor-reitz",
     name: "Taylor Reitz, LCSW",
+    email: "taylor@newbeginningcc.net",
     credentials: "Social Worker",
     focus: "Individual, Adolescents (15+)",
     image: "/assets/staff-2.jpg",
@@ -52,6 +54,7 @@ As a Christian counselor, Taylor is happy to incorporate Christian elements with
   {
     slug: "jennifer-day",
     name: "Jennifer Day, LPC",
+    email: "jennifer@newbeginningcc.net",
     credentials: "Counselor",
     focus: "Individual",
     image: "/assets/staff-3.jpg",
@@ -66,6 +69,7 @@ Jennifer works with clients experiencing neurodivergence, anxiety, depression, a
   {
     slug: "jamey-savoie",
     name: "Jamey Savoie, LCSW",
+    email: "jamey@newbeginningcc.net",
     credentials: "Social Worker",
     focus: "Individual, Adolescents",
     image: "/assets/staff-4.jpg",
@@ -81,6 +85,7 @@ At the core of Jamey’s work is the belief that our thoughts, emotions, behavio
   {
     slug: "megan-moran",
     name: "Megan Moran, APRN-CNP",
+    email: "megan@newbeginningcc.net",
     credentials: "Nurse Practitioner",
     focus: "Medication Management",
     image: "/assets/staff-5.jpg",
@@ -99,6 +104,7 @@ At the core of Jamey’s work is the belief that our thoughts, emotions, behavio
   {
     slug: "sandy-vojtaskovic",
     name: "Sandy Vojtaskovic",
+    email: "sandy@newbeginningcc.net",
     credentials: "Supervised Intern",
     focus: "Individual, Adolescents, & Couples",
     image: "/assets/staff-6.jpg",
