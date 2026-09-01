@@ -93,14 +93,14 @@ At the core of Jamey’s work is the belief that our thoughts, emotions, behavio
     
     Megan treats a variety of mental health conditions, including anxiety, depression, ADHD, mood disorders, and substance use disorders. She believes in partnering with patients to create individualized treatment plans that combine medication management, education, and supportive care to help them achieve lasting mental wellness.`,
   },
-  // {
-  //   slug: "devon-wilson",
-  //   name: "Devon Wilson, PLPC",
-  //   credentials: "Counselor",
-  //   focus: "Individual, Adolescents (13+), Couples & Families",
-  //   image: "/assets/staff-6.jpg",
-  //   bio: ``,
-  // },
+  {
+    slug: "devon-wilson",
+    name: "Devon Wilson, PLPC",
+    credentials: "Counselor",
+    focus: "Individual, Adolescents (13+), Couples & Families",
+    image: "/assets/IMG_0246.jpeg",
+    bio: `Devon Wilson works as a Provisional Licensed Professional Counselor with teens, adults and couples who may be feeling disconnected from themselves or the people they care about. She supports clients in exploring how the impact of childhood adverse experiences and trauma continues to influence their thought patterns and relationships. She desires to provide clients with a space that honors each story as they make meaning of their experiences. Devon enjoys borrowing from cognitive-based modalities such as Cognitive Behavioral Therapy (CBT) and Acceptance and Commitment Therapy (ACT) and is trained in EMDR to offer trauma-focused treatment when needed. When working with couples, she draws from Emotionally Focused Couples Therapy (EFCT) to help partners better understand and express their underlying emotional experiences that shape their connection.`,
+  },
   {
     slug: "sandy-vojtaskovic",
     name: "Sandy Vojtaskovic",
