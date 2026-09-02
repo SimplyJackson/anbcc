@@ -96,6 +96,7 @@ At the core of Jamey’s work is the belief that our thoughts, emotions, behavio
   {
     slug: "devon-wilson",
     name: "Devon Wilson, PLPC",
+    email: "devon@newbeginningcc.net",
     credentials: "Counselor",
     focus: "Individual, Adolescents (13+), Couples & Families",
     image: "/assets/IMG_0246.jpeg",
